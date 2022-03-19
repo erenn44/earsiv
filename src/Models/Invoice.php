@@ -1,9 +1,9 @@
 <?php
 
-namespace furkankadioglu\eFatura\Models;
+namespace erenn44\eArsiv\Models;
 
-use furkankadioglu\eFatura\Exceptions\ValidatorException;
-use furkankadioglu\eFatura\Traits\Exportable;
+use erenn44\eArsiv\Exceptions\ValidatorException;
+use erenn44\eArsiv\Traits\Exportable;
 use NumberToWords\NumberToWords;
 use Ramsey\Uuid\Uuid;
 
