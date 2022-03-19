@@ -23,11 +23,11 @@ https://earsivportaltest.efatura.gov.tr/login.jsp
 
 **Paket Kurulumu:**
 
-    composer require furkankadioglu/efatura
+    composer require erenn44/earsiv
     
 ### 📲 Destek ve Sorular 
 
-Eğer bir sorun yaşıyorsanız veya proje hakkında bir sorunuz varsa lütfen [buradan](https://github.com/furkankadioglu/efatura/issues/new "buradan") bir kayıt oluşturun, yaşadığınız sorunu hep birlikte çözelim.
+Eğer bir sorun yaşıyorsanız veya proje hakkında bir sorunuz varsa lütfen [buradan](https://github.com/erenn44/earsiv/issues/new "buradan") bir kayıt oluşturun, yaşadığınız sorunu hep birlikte çözelim.
 
 
 ### 🚩Özellikler
@@ -53,7 +53,7 @@ Eğer bir sorun yaşıyorsanız veya proje hakkında bir sorunuz varsa lütfen [
 
 Bir client oluşturarak genel yapıyı projemize dahil ediyoruz.
 ```php
-use furkankadioglu\eFatura\InvoiceManager;
+use erenn44\eArsiv\InvoiceManager;
 $client = new InvoiceManager();
 ```
 Giriş bilgilerinizi chain fonksiyonlarla tanımlayabiliyorsunuz, bu production için geçerlidir.
@@ -389,7 +389,7 @@ composer test
 
 **Daha Fazla Örnek:**
 
-Daha fazla örneği [buradan](https://github.com/furkankadioglu/efatura/blob/master/example/index.php "buradan")` bulabilirsiniz.
+
 
 **Uyarı**
 
@@ -397,4 +397,3 @@ Daha fazla örneği [buradan](https://github.com/furkankadioglu/efatura/blob/mas
 
 **Ayrıca**
 
-Bu proje Fatih Kadir Akın'ın  [fatura.js](https://github.com/f/fatura "fatura")` projesinden yola çıkılarak PHP diline uyarlanarak yapılmıştır. Arda Kılıçdağı'na da ayrıca teşekkürler.
