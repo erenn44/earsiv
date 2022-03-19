@@ -1,21 +1,21 @@
 {
-    "name": "erenn44_furkankadioglu/efatura",
-    "description": "EFatura",
+    "name": "erenn44/earsiv",
+    "description": "E-Arsiv",
     "keywords": [
-        "efatura",
+        "earsiv",
         "fatura",
-        "e-fatura",
+        "e-arsiv",
         "e-arşiv",
         "earşiv"
     ],
-    "homepage": "https://github.com/erenn44/efatura",
+    "homepage": "https://github.com/erenn44/earsiv",
     "license": "MIT",
-    "version": "1.9.5",
+    "version": "1.0.0",
     "authors": [
         {
-            "name": "Furkan Kadıoğlu",
-            "email": "furkan.kadioglu@gmail.com",
-            "homepage": "http://furkankadioglu.com"
+            "name": "Eren Şengün",
+            "email": "info@erensengun.com",
+            "homepage": "https://xayyazilim.com"
         }
     ],
     "require": {
@@ -30,7 +30,7 @@
     },
     "autoload": {
         "psr-4": {
-            "furkankadioglu\\eFatura\\": "src/"
+            "erenn44\\eArsiv\\": "src/"
         }
     },
     "scripts": {
