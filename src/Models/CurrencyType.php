@@ -1,6 +1,6 @@
 <?php 
 
-namespace furkankadioglu\eFatura\Models;
+namespace erenn44\eArsiv\Models;
 
 final class CurrencyType {
     const AFGHANI = "AFN";
