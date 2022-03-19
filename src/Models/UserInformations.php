@@ -1,8 +1,8 @@
 <?php 
 
-namespace furkankadioglu\eFatura\Models;
+namespace erenn44\eArsiv\Models;
 
-use furkankadioglu\eFatura\Traits\Exportable;
+use erenn44\eArsiv\Traits\Exportable;
 
 class UserInformations {
 
