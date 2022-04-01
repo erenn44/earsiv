@@ -175,7 +175,7 @@ class InvoiceManager
             $this->password = $password;
             return $this;
         }
-	    
+
         $response = $this->client->post($this->getBaseUrl() . "/earsiv-services/esign", [
             "form_params" => [
                 "assoscmd" => "kullaniciOner",
@@ -338,7 +338,11 @@ class InvoiceManager
     private function checkError($jsonData)
     {
         if (isset($jsonData["error"])) {
-            throw new ApiException("Sunucu taraflı bir hata oluştu!", 0, null, $jsonData);
+            if (isset($jsonData["messages"][0]["text"])) {
+                throw new ApiException("Sunucu taraflı bir hata oluştu!  Hata Mesajı:".$jsonData["messages"][0]["text"], 0, null, $jsonData);
+            } else {
+                throw new ApiException("Sunucu taraflı bir hata oluştu!", 0, null, $jsonData);
+            }
         }
     }
 
@@ -431,10 +435,10 @@ class InvoiceManager
               "jp" => '{"baslangic":"' . $startDate . '","bitis":"' . $endDate . ' " }' ];
           $body = $this->sendRequestAndGetBody(self::DISPATCH_PATH, $parameters);
           $this->checkError($body);
- 
+
           // Array tipinden verilen tarih aralığında yer alan faturalar dönüyor
           $this->invoices = $body['data'];
- 
+
           return $body;
       }
 
@@ -492,7 +496,8 @@ class InvoiceManager
         $this->checkError($body);
 
         if ($body["data"] != "Faturanız başarıyla oluşturulmuştur. Düzenlenen Belgeler menüsünden faturanıza ulaşabilirsiniz.") {
-            throw new ApiException("Fatura oluşturulamadı.", 0, null, $body);
+            throw new ApiException("Fatura oluşturulamadı. Hata mesajı : ".$body["data"], 0, null, $body);
+
         }
 
         return $this;
@@ -754,7 +759,7 @@ class InvoiceManager
      *
      * @return boolean
      */
-     
+
      private function initializeSMSVerification()
      {
         $parameters = [
@@ -770,8 +775,8 @@ class InvoiceManager
 
         return $body["data"]["telefon"];
     }
-    
-    
+
+
     /**
      * Send user informations data
      *
@@ -781,7 +786,7 @@ class InvoiceManager
     public function sendSMSVerification($phoneNumber = null)
     {
         $getPhoneNumber = $this->initializeSMSVerification();
-        
+
         $data = [
             "CEPTEL" => $getPhoneNumber,
             "KCEPTEL" => false,
@@ -834,7 +839,7 @@ class InvoiceManager
         {
             return false;
         }
-        
+
         if($body["data"]["sonuc"] == 0)
         {
             return false;
